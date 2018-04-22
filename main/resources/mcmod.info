@@ -1,0 +1,16 @@
+[
+{
+  "modid": "automagetion",
+  "name": "Automagetion",
+  "description": "Welcome to the Industrial Revelation!",
+  "version": "1.0",
+  "mcversion": "1.8",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["BaconianMethod", "Contrailan"],
+  "credits": "The Forge and FML guys",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
