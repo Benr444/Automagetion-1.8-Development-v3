@@ -1,0 +1,6 @@
+{
+    "parent":"tutorial:item/standard_item",
+    "textures": {
+        "layer0":"automagetion:items/chant_root_fibers"
+    }
+}
