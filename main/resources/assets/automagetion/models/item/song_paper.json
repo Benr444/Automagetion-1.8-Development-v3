@@ -1,6 +1,6 @@
 {
     "parent":"automagetion:item/melody_item",
     "textures": {
-        "layer0":"automagetion:items/song_paper"
+        "layer0":"automagetion:item/song_paper"
     }
 }

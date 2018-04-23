@@ -1,6 +1,6 @@
 {
     "parent":"automagetion:item/melody_item",
     "textures": {
-        "layer0":"automagetion:items/pax"
+        "layer0":"automagetion:item/pax"
     }
 }

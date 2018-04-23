@@ -2,6 +2,6 @@
     "parent":"automagetion:item/melody_item",
     "textures": 
     {
-        "layer0":"automagetion:items/animo"
+        "layer0":"automagetion:item/animo"
     }
 }

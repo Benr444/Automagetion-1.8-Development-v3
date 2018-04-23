@@ -1,6 +1,6 @@
 {
     "parent":"automagetion:item/melody_item",
     "textures": {
-        "layer0":"automagetion:items/cantio"
+        "layer0":"automagetion:item/cantio"
     }
 }
