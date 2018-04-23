@@ -1,5 +1,5 @@
 {
-    "parent":"tutorial:item/standard_item",
+    "parent":"automagetion:item/melody_item",
     "textures": {
         "layer0":"automagetion:items/natura"
     }
