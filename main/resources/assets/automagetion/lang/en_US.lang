@@ -4,6 +4,7 @@ itemGroup.Automagetion=Automagetion
 //Items
 item.animo.name=Animo
 item.bellum.name=Bellum
+item.broom.name=Broom
 item.caelum.name=Caelum
 item.calor.name=Calor
 item.cantio.name=Cantio
@@ -17,6 +18,7 @@ item.inanis.name=Inanis
 item.inferum.name=Infernum
 item.irrigus.name=Irrigus
 item.mundus.name=Mundus
+item.natura.name=Natura
 item.pax.name=Pax
 item.reed_assembly.name=Reed Assembly
 item.song_paper.name=Song Paper

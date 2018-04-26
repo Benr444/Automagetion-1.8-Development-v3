@@ -1,6 +1,7 @@
 package automagetion;
 
-import automagetion.item.BasicItem;
+import automagetion.item.ItemBasic;
+import automagetion.item.ItemMelody;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -9,12 +10,13 @@ public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent e) 
     {
-    	//initialize all items
+
     }
 
     public void init(FMLInitializationEvent e) 
     {
-    	BasicItem.init();
+    	ItemBasic.init();
+    	ItemMelody.init();
     }
 
     public void postInit(FMLPostInitializationEvent e) 

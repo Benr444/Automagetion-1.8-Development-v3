@@ -1,5 +1,5 @@
 {
-    "parent":"automagetion:item/melody_item",
+    "parent":"automagetion:item/automagetion_item",
     "textures": {
         "layer0":"automagetion:item/chant_root_fibers"
     }
