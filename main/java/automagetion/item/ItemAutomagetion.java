@@ -1,15 +1,37 @@
 package automagetion.item;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ItemAutomagetion extends Item
 {
 	/* Custom/New properties */
+
+	//Creating custom tab
+	public static final CreativeTabs tabAutomagetion = new CreativeTabs("Automagetion")
+	{
+	    @Override 
+	    public Item getTabIconItem() 
+	    {
+	        return ItemMelody.cantio;
+	    }
+	};
+		
 	/** Similar to unlocalized name, but with "item." in front */
 	private String shortName = "";
 	
 	/** Set to true when name is set. Cannot change name after this is true*/
 	private boolean nameSet = false;
+	
+	/**
+	 * Called on mod initialization - initializes and registers ALL items
+	 */
+	public static void init()
+	{
+		ItemBasic.init();
+		ItemMelody.init();
+		ItemBroom.init();
+	}
 	
 	/**
 	 * Set the name. Use this name to define the unlocalizedname
@@ -66,5 +88,10 @@ public class ItemAutomagetion extends Item
 			System.out.println("ERROR: ItemAutomagetion has not had shortName set! Attempted to get name from " + this + ", a blank string was returned");
 			return "";
 		}
+	}
+	
+	public ItemAutomagetion()
+	{
+		super();
 	}
 }
