@@ -1,0 +1,24 @@
+//Creative Tabs
+itemGroup.Automagetion=Automagetion
+
+//Items
+item.animo.name=Animo
+item.bellum.name=Bellum
+item.caelum.name=Caelum
+item.calor.name=Calor
+item.cantio.name=Cantio
+item.chant_root_fibers.name=Chant Root Fibers
+item.chant_root.name=Chant Root
+item.creo.name=Creo
+item.evorsio.name=Evorsio
+item.funus.name=Funus
+item.imperium.name=Imperium
+item.inanis.name=Inanis
+item.inferum.name=Infernum
+item.irrigus.name=Irrigus
+item.mundus.name=Mundus
+item.pax.name=Pax
+item.reed_assembly.name=Reed Assembly
+item.song_paper.name=Song Paper
+item.sopio.name=Sopio
+item.whistling_reed.name=Whistling Reed
