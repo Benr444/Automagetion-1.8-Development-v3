@@ -9,8 +9,8 @@ public class ItemRenderRegister
 {
 	public static String modid = Automagetion.MODID;
 
-	public static void reg(Item item) 
+	public static void reg(ItemAutomagetion item) 
 	{
-	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(modid + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(modid + ":" + item.getShortName(), "inventory"));
 	}
 }

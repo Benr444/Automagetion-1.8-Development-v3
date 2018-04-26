@@ -2,6 +2,7 @@ package automagetion.item;
 
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +16,9 @@ public class ItemBroom extends ItemAutomagetion
 {
 	/** Static reference to broom object */
 	public static ItemBroom broom;
+	
+	/** Broom use time */
+	public final static int BROOM_USE_INTERVAL = 40;
 	
 	/** When right click, time that the broom is "swung-out" in animation. Units = Ticks, 20 ticks a sec */
 	private final int useTime = 8;
@@ -56,7 +60,7 @@ public class ItemBroom extends ItemAutomagetion
 	@Override
     public int getMaxItemUseDuration(ItemStack stack)
     {
-        return 40; //8 ticks
+        return BROOM_USE_INTERVAL; //8 ticks
     }
     
     /**
@@ -71,7 +75,7 @@ public class ItemBroom extends ItemAutomagetion
     @Override
     public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining)
     {
-    	int ticksInUse = this.getMaxItemUseDuration(stack) - useRemaining;
+    	int ticksInUse = BROOM_USE_INTERVAL - useRemaining;
     	System.out.println("Tick use time on broom: " + ticksInUse);
     	System.out.println("ItemUseDuration: " + player.getItemInUseDuration());
     	System.out.println("ItemUseCount: " + player.getItemInUseCount());
@@ -96,5 +100,13 @@ public class ItemBroom extends ItemAutomagetion
     {
     	System.out.println("Broom use finished");
         return stack;
+    }
+    
+    /**
+     * returns the action that specifies what animation to play when the items is being used
+     */
+    public EnumAction getItemUseAction(ItemStack stack)
+    {
+        return EnumAction.BLOCK;
     }
 }

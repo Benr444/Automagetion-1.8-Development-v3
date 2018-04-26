@@ -4,6 +4,7 @@ import automagetion.item.ItemBroom;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -14,19 +15,22 @@ public class BroomEventHandler
 	 * @param event
 	 */
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void pickupItem(EntityItemPickupEvent event)
+	@EventHandler
+    public void pickupItem(EntityItemPickupEvent event)
     {
-		System.out.print("A player picked up an item");
-    	if (event.entityPlayer.getHeldItem().getUnlocalizedName() == ItemBroom.broom.getUnlocalizedName())
+    	if (event.entityPlayer.getHeldItem() != null)
     	{
-    		System.out.println("    That player held a broom");
-    		event.setCanceled(true);
+    		if (event.entityPlayer.getHeldItem().getItem() == ItemBroom.broom)
+			{
+	    		event.setCanceled(true);
+			}
     	}
     }
 	
 	/** Registers this event handler */
 	public static void register()
 	{
-		MinecraftForge.EVENT_BUS.register(BroomEventHandler.class);
+		System.out.println("Automagetion: Registered BroomEventHandler");
+		MinecraftForge.EVENT_BUS.register(new BroomEventHandler());
 	}
 }
