@@ -1,5 +1,6 @@
 package automagetion;
 
+import automagetion.block.BlockAutomagetion;
 import automagetion.event.BroomEventHandler;
 import automagetion.item.ItemAutomagetion;
 import automagetion.item.ItemBasic;
@@ -18,6 +19,7 @@ public class CommonProxy
     public void init(FMLInitializationEvent e) 
     {
     	ItemAutomagetion.init();
+    	BlockAutomagetion.init();
     }
 
     public void postInit(FMLPostInitializationEvent e) 

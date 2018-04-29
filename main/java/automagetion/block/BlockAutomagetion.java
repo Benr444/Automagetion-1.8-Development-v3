@@ -1,45 +1,35 @@
-package automagetion.item;
+package automagetion.block;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import automagetion.item.ItemAutomagetion;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
-public class ItemAutomagetion extends Item
+public class BlockAutomagetion extends Block
 {
-	/* Custom/New properties */
-
-	//Creating custom tab
-	public static final CreativeTabs tabAutomagetion = new CreativeTabs("Automagetion")
-	{
-	    @Override 
-	    public Item getTabIconItem() 
-	    {
-	        return ItemMelody.cantio;
-	    }
-	};
-		
 	/** Similar to unlocalized name, but with "item." in front */
 	private String shortName = "";
 	
 	/** Set to true when name is set. Cannot change name after this is true*/
 	private boolean nameSet = false;
 	
-	/**
-	 * Called on mod initialization - initializes and registers ALL items
-	 */
+	/** All blocks need to initialize from here
+	 *  */
 	public static void init()
 	{
-		ItemBasic.init();
-		ItemMelody.init();
-		ItemBroom.init();
-		ItemTuningFork.init();
+		
 	}
 	
+	public BlockAutomagetion(Material materialIn) 
+	{
+		super(materialIn);
+	}
+
 	/**
 	 * Set the name. Use this name to define the unlocalizedname
 	 * @param nameString - ex: cantio would use cantio.setName("cantio") then cantio.setUnlocalizedName(cantio.getName())
 	 * @return - self, for chaining
 	 */
-	public ItemAutomagetion setShortName(String nameString)
+	public BlockAutomagetion setShortName(String nameString)
 	{
 		if (this.nameSet == true)
 		{
@@ -58,7 +48,7 @@ public class ItemAutomagetion extends Item
 	 * @param name - name to set
 	 * @return - self, for chaining
 	 */
-	public ItemAutomagetion setShortAndUnlocalizedName(String name)
+	public BlockAutomagetion setShortAndUnlocalizedName(String name)
 	{
 		if (this.nameSet == true)
 		{
@@ -89,10 +79,5 @@ public class ItemAutomagetion extends Item
 			System.out.println("ERROR: ItemAutomagetion has not had shortName set! Attempted to get name from " + this + ", a blank string was returned");
 			return "";
 		}
-	}
-	
-	public ItemAutomagetion()
-	{
-		super();
 	}
 }

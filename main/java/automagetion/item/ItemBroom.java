@@ -1,5 +1,6 @@
 package automagetion.item;
 
+import automagetion.AutomagetionUtil;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -18,10 +19,7 @@ public class ItemBroom extends ItemAutomagetion
 	public static ItemBroom broom;
 	
 	/** Broom use time */
-	public final static int BROOM_USE_INTERVAL = 40;
-	
-	/** When right click, time that the broom is "swung-out" in animation. Units = Ticks, 20 ticks a sec */
-	private final int useTime = 8;
+	public final static int BROOM_USE_INTERVAL = 8;
 	
 	public ItemBroom()
 	{
@@ -50,7 +48,68 @@ public class ItemBroom extends ItemAutomagetion
 	@Override
     public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
     {
+		
+		
     	System.out.println(playerIn.getName() + " right clicked with a broom.");
+    	System.out.println("Your yaw: " + playerIn.getRotationYawHead());
+    	//Transform fYaw (fixed yaw) into into a clock-math angle, only positives
+    	//fYaw is constrainted to be 0 <= yaw < 360
+    	int fYaw = (int)(playerIn.getRotationYawHead() + 0.5);
+    	fYaw = fYaw % 360;
+    	fYaw = (fYaw < 0) ? 360 + fYaw : fYaw;
+    	
+    	//Defining the coordinate system:
+    	//East is positive x axis
+    	//West is negative x axis
+    	//South is position z axis
+    	//North is negative z axis
+    	
+    	//The AOE is a box with these dimensions: (u = 1 block length)
+    	//1.5u in front of you
+    	//0.5u behind you
+    	//1u left and 1u right
+    	//1.5u up from your feet
+    	
+    	//A is the forward-left corner
+    	//B is the forward-right corner
+    	//C is the back-right corner
+    	//D is the back-leff corner
+    	
+    	double lenA, lenB, lenC, lenD; //Lengths of corner vectors (vectors pointing from center to corners)
+    	lenA = lenB = 1.803; //The lines connecting center to A and center to B are this length in u's
+    	lenC = lenD = 1.118; //The lines connecting center to C and center to D are this length in u's
+    	
+    	double angH = 63.43; //Degrees between the yaw-vector and the A and B vectors to either side
+    	double angF = 33.69; //Degrees between the reverse yaw-vector and the C and D vectors to either side
+    	
+    	double angA = fYaw + angH; //Angle relative to real coordinates for the A-vector
+    	double angB = fYaw - angH; //Angle relative to real coordinates for the B-vector
+    	double angC = fYaw + 180 - angF; //Angle relative to real coordinates for the C-vector
+    	double angD = fYaw + 180 + angF; //Angle relative to real coordinates for the D-vector
+    	
+    	double aX, bX, cX, dX; //Declaration of X position for corners A, B, C, D. They are relative to your position, initially
+    	aX = bX = cX = dX = playerIn.getPosition().getX(); //Initially equal to your x-pos
+    	double aZ, bZ, cZ, dZ; //Declaration of Z position for corners A, B, C, D. They are relative to your position, initially
+    	aZ = bZ = cZ = dZ = playerIn.getPosition().getZ(); //Initially equal to your z-pos
+    	
+    	//Each point extends away from the player position in the x based on the cos of the point vector
+    	aX += lenA * Math.cos(Math.toRadians(angA));
+    	bX += lenB * Math.cos(Math.toRadians(angB));
+    	cX += lenC * Math.cos(Math.toRadians(angC));
+    	dX += lenD * Math.cos(Math.toRadians(angD));
+    	
+    	//Each point extends away from the player position in the y based on the sin of the point vector
+    	aZ += lenA * Math.sin(Math.toRadians(angA));
+    	bZ += lenB * Math.sin(Math.toRadians(angB));
+    	cZ += lenC * Math.sin(Math.toRadians(angC));
+    	dZ += lenD * Math.sin(Math.toRadians(angD));
+    	
+    	//Unfortunately, area boxes in minecraft are "Axis Aligned" meaning they much be draw as parallel to block axes.
+    	//This means to approximate a box at an angle, we need to draw a series of progressively smaller boxes inside this one
+    	//The AutomagetionUtil.fractalizeBB() creates an array of progressively smaller BB's that attempt to fill in a non-axis-aligned BB
+    	AutomagetionUtil.fractalizeBB(1, 1.5, aX, aZ, bX, bZ, cX, cZ, dX, dZ);
+    	
+    	System.out.print("fYaw = " + fYaw);
         return itemStackIn;
     }
     
@@ -60,7 +119,7 @@ public class ItemBroom extends ItemAutomagetion
 	@Override
     public int getMaxItemUseDuration(ItemStack stack)
     {
-        return BROOM_USE_INTERVAL; //8 ticks
+        return BROOM_USE_INTERVAL; 
     }
     
     /**
@@ -75,10 +134,8 @@ public class ItemBroom extends ItemAutomagetion
     @Override
     public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining)
     {
-    	int ticksInUse = BROOM_USE_INTERVAL - useRemaining;
-    	System.out.println("Tick use time on broom: " + ticksInUse);
-    	System.out.println("ItemUseDuration: " + player.getItemInUseDuration());
-    	System.out.println("ItemUseCount: " + player.getItemInUseCount());
+    	System.out.println("useRemaining: " + useRemaining);
+    	System.out.println("Max Use Time: " + BROOM_USE_INTERVAL);
     	this.setDamage(stack, this.getMaxDamage());
     	if (player.isUsingItem()) //True while right clicking
     	{
