@@ -25,3 +25,7 @@ item.song_paper.name=Song Paper
 item.sopio.name=Sopio
 item.tuning_fork.name=Tuning Fork
 item.whistling_reed.name=Whistling Reed
+
+//Blocks
+block.songwood_planks.name=Songwood Planks
+block.songwood_log.name=Songwood Log

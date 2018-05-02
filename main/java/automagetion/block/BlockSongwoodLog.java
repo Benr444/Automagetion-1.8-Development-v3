@@ -2,7 +2,9 @@ package automagetion.block;
 
 import automagetion.item.ItemAutomagetion;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockSongwoodLog extends BlockAutomagetion
 {
@@ -15,6 +17,8 @@ public class BlockSongwoodLog extends BlockAutomagetion
 		this.setCreativeTab(ItemAutomagetion.tabAutomagetion);
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer
+	public static void init()
+	{
+		songwoodLog.setShortAndUnlocalizedName("songwood_log");
+	}
 }

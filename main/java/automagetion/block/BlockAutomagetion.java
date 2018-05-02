@@ -3,6 +3,10 @@ package automagetion.block;
 import automagetion.item.ItemAutomagetion;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockAutomagetion extends Block
 {
@@ -15,6 +19,15 @@ public class BlockAutomagetion extends Block
 	/** All blocks need to initialize from here
 	 *  */
 	public static void init()
+	{
+		BlockSongwoodPlanks.init();
+	}
+	
+	public static void reg(ItemAutomagetion item) 
+	{
+	   //ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation();
+	}
+	public static void reg(Item item) 
 	{
 		
 	}
