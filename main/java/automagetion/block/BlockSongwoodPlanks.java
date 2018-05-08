@@ -23,27 +23,26 @@ public class BlockSongwoodPlanks extends BlockAutomagetion
 		this.setCreativeTab(ItemAutomagetion.tabAutomagetion);
 	}
 	
-	public static void init()
+	public static void preInit()
 	{
 		songwoodPlanks = new BlockSongwoodPlanks();
 		songwoodPlanks.setShortAndUnlocalizedName("songwood_planks");
 		
 		GameRegistry.registerBlock(songwoodPlanks, songwoodPlanks.getShortName());
-		
-		//Item itemSongwoodPlanks = GameRegistry.findItem(Automagetion.MODID, songwoodPlanks.getShortName()); //Fetches the ITEM version of this block (inventory version)
+	}
+	
+	public static void init()
+	{
 		Item itemSongwoodPlanks = Item.getItemFromBlock(songwoodPlanks);
 		
 		ItemAutomagetion.regForRendering(itemSongwoodPlanks); //Registers the block item for inventory rendering
-		
-		//ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation(songwoodPlanks.getUnlocalizedName(), "inventory");
-		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSongwoodPlanks, 0, itemModelResourceLocation);
 	}
 	
-	/** Specifies some information about how the block is rendered while placed 
+	/** Specifies some information about how the block is rendered while placed */
 	@SideOnly(Side.CLIENT)
 	public EnumWorldBlockLayer getBlockLayer()
 	{
 		return EnumWorldBlockLayer.SOLID;
-	}*/
+	}
 
 }

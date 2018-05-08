@@ -13,7 +13,13 @@ public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent e) 
     {
-    	BroomEventHandler.register();
+    	//Block and Item Reference Creation
+    	BlockAutomagetion.preInit();
+    	ItemAutomagetion.preInit();
+    	
+    	//Event Registry, Things that are dependent on item existance
+    	BroomEventHandler.init();
+    	AutomagetionRecipes.init();
     }
 
     public void init(FMLInitializationEvent e) 

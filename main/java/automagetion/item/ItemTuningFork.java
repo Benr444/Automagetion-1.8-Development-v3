@@ -19,7 +19,7 @@ public class ItemTuningFork extends ItemAutomagetion
 		super();
 	}
 	
-	public static void init()
+	public static void preInit()
 	{
 		tuningFork = new ItemTuningFork();
     	tuningFork.setShortAndUnlocalizedName("tuning_fork");
@@ -29,6 +29,10 @@ public class ItemTuningFork extends ItemAutomagetion
     	tuningFork.setHasSubtypes(false);
     	
     	GameRegistry.registerItem(tuningFork, tuningFork.getShortName());
+	}
+	
+	public static void init()
+	{
     	regForRendering(tuningFork);
 	}
 	

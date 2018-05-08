@@ -16,8 +16,12 @@ public class BlockAutomagetion extends Block
 	/** Set to true when name is set. Cannot change name after this is true*/
 	private boolean nameSet = false;
 	
-	/** All blocks need to initialize from here
-	 *  */
+	/** All blocks need to initialize from here */
+	public static void preInit()
+	{
+		BlockSongwoodPlanks.preInit();
+	}
+	
 	public static void init()
 	{
 		BlockSongwoodPlanks.init();

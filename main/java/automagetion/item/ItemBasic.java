@@ -16,9 +16,9 @@ public class ItemBasic extends ItemAutomagetion
 	public static ItemBasic songPaper;
 	public static ItemBasic reedAssembly;
 	
-    public static final void init() 
-    {
-    	//Initialize items with basic information
+	public static final void preInit()
+	{
+		//Initialize items with basic information
     	chantRoot = new ItemBasic();
     	chantRoot.setShortAndUnlocalizedName("chant_root").setCreativeTab(tabAutomagetion);
     	chantRootFibers = new ItemBasic();
@@ -33,7 +33,10 @@ public class ItemBasic extends ItemAutomagetion
     	GameRegistry.registerItem(chantRootFibers, chantRootFibers.getShortName());
     	GameRegistry.registerItem(songPaper, songPaper.getShortName());
     	GameRegistry.registerItem(reedAssembly, reedAssembly.getShortName());
-    	
+	}
+	
+    public static final void init() 
+    {
     	//Register with renderer
     	regForRendering(chantRoot);
     	regForRendering(chantRootFibers);

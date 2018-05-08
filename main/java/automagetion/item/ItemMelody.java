@@ -36,7 +36,7 @@ public class ItemMelody extends ItemAutomagetion
 	public static ItemMelody imperium;
 	public static ItemMelody animo;
 	
-	public static void init()
+	public static void preInit()
 	{
 		//Initialize
     	cantio = new ItemMelody();
@@ -105,7 +105,10 @@ public class ItemMelody extends ItemAutomagetion
     	GameRegistry.registerItem(evorsio, evorsio.getShortName());
     	GameRegistry.registerItem(imperium, imperium.getShortName());
     	GameRegistry.registerItem(animo, animo.getShortName());
-    	
+	}
+	
+	public static void init()
+	{
     	//Render Register
     	regForRendering(animo);
     	regForRendering(bellum);

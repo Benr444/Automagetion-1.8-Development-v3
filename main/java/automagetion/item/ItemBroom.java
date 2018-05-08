@@ -29,7 +29,7 @@ public class ItemBroom extends ItemAutomagetion
 	/**
 	 * Initializes item, registers it, etc. Called when mod initializes
 	 */
-	public static void init()
+	public static void preInit()
 	{
 		broom = new ItemBroom();
     	broom.setShortAndUnlocalizedName("broom");
@@ -39,6 +39,10 @@ public class ItemBroom extends ItemAutomagetion
     	broom.setHasSubtypes(false);
     	
     	GameRegistry.registerItem(broom, broom.getShortName());
+	}
+	
+	public static void init()
+	{
     	regForRendering(broom);
 	}
 	

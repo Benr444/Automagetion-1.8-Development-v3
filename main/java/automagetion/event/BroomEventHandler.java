@@ -28,7 +28,7 @@ public class BroomEventHandler
     }
 	
 	/** Registers this event handler */
-	public static void register()
+	public static void init()
 	{
 		System.out.println("Automagetion: Registered BroomEventHandler");
 		MinecraftForge.EVENT_BUS.register(new BroomEventHandler());

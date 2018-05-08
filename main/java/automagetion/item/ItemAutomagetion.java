@@ -34,6 +34,14 @@ public class ItemAutomagetion extends Item
 	/**
 	 * Called on mod initialization - initializes and registers ALL items
 	 */
+	public static void preInit()
+	{
+		ItemBasic.preInit();
+		ItemMelody.preInit();
+		ItemBroom.preInit();
+		ItemTuningFork.preInit();
+	}
+	
 	public static void init()
 	{
 		ItemBasic.init();
