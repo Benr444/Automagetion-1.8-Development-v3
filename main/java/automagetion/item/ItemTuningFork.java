@@ -29,7 +29,7 @@ public class ItemTuningFork extends ItemAutomagetion
     	tuningFork.setHasSubtypes(false);
     	
     	GameRegistry.registerItem(tuningFork, tuningFork.getShortName());
-    	ItemRenderRegister.reg(tuningFork);
+    	regForRendering(tuningFork);
 	}
 	
 	/**

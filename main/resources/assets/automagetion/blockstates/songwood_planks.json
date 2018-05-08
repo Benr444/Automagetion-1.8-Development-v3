@@ -1,5 +1,6 @@
 {
-    "variants": {
-        "normal": { "model": "songwood_planks" }
+    "variants": 
+    {
+        "normal": { "model": "automagetion:songwood_planks" }
     }
 }

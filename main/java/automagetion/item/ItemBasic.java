@@ -35,9 +35,9 @@ public class ItemBasic extends ItemAutomagetion
     	GameRegistry.registerItem(reedAssembly, reedAssembly.getShortName());
     	
     	//Register with renderer
-    	ItemRenderRegister.reg(chantRoot);
-    	ItemRenderRegister.reg(chantRootFibers);
-    	ItemRenderRegister.reg(reedAssembly);
-    	ItemRenderRegister.reg(songPaper);
+    	regForRendering(chantRoot);
+    	regForRendering(chantRootFibers);
+    	regForRendering(reedAssembly);
+    	regForRendering(songPaper);
     }
 }

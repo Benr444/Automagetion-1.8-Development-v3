@@ -39,7 +39,7 @@ public class ItemBroom extends ItemAutomagetion
     	broom.setHasSubtypes(false);
     	
     	GameRegistry.registerItem(broom, broom.getShortName());
-    	ItemRenderRegister.reg(broom);
+    	regForRendering(broom);
 	}
 	
 	/**

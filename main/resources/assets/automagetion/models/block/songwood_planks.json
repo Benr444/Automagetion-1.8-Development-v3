@@ -2,6 +2,6 @@
     "parent": "block/cube_all",
     "textures": 
     {
-        "all": "blocks/songwood"
+        "all": "automagetion:blocks/songwood_planks"
     }
 }

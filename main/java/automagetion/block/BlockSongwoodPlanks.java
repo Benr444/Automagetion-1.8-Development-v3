@@ -1,9 +1,13 @@
 package automagetion.block;
 
+import automagetion.Automagetion;
 import automagetion.item.ItemAutomagetion;
-import automagetion.item.ItemBlockAutomagetion;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -12,9 +16,6 @@ public class BlockSongwoodPlanks extends BlockAutomagetion
 {
 	/** Static self-instance for outside reference */
 	public static BlockSongwoodPlanks songwoodPlanks;
-
-	/** Reference to inventory version */
-	public static ItemBlockAutomagetion itemSongwoodPlanks;
 	
 	public BlockSongwoodPlanks() 
 	{
@@ -26,9 +27,23 @@ public class BlockSongwoodPlanks extends BlockAutomagetion
 	{
 		songwoodPlanks = new BlockSongwoodPlanks();
 		songwoodPlanks.setShortAndUnlocalizedName("songwood_planks");
-		itemSongwoodPlanks = new ItemBlockAutomagetion(songwoodPlanks);
-		itemSongwoodPlanks.setUnlocalizedName(songwoodPlanks.getUnlocalizedName());
+		
 		GameRegistry.registerBlock(songwoodPlanks, songwoodPlanks.getShortName());
-		GameRegistry.registerItem(itemSongwoodPlanks, songwoodPlanks.getShortName());
+		
+		//Item itemSongwoodPlanks = GameRegistry.findItem(Automagetion.MODID, songwoodPlanks.getShortName()); //Fetches the ITEM version of this block (inventory version)
+		Item itemSongwoodPlanks = Item.getItemFromBlock(songwoodPlanks);
+		
+		ItemAutomagetion.regForRendering(itemSongwoodPlanks); //Registers the block item for inventory rendering
+		
+		//ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation(songwoodPlanks.getUnlocalizedName(), "inventory");
+		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSongwoodPlanks, 0, itemModelResourceLocation);
 	}
+	
+	/** Specifies some information about how the block is rendered while placed 
+	@SideOnly(Side.CLIENT)
+	public EnumWorldBlockLayer getBlockLayer()
+	{
+		return EnumWorldBlockLayer.SOLID;
+	}*/
+
 }

@@ -107,22 +107,22 @@ public class ItemMelody extends ItemAutomagetion
     	GameRegistry.registerItem(animo, animo.getShortName());
     	
     	//Render Register
-    	ItemRenderRegister.reg(animo);
-    	ItemRenderRegister.reg(bellum);
-    	ItemRenderRegister.reg(caelum);
-    	ItemRenderRegister.reg(calor);
-    	ItemRenderRegister.reg(cantio);
-    	ItemRenderRegister.reg(creo);
-    	ItemRenderRegister.reg(evorsio);
-    	ItemRenderRegister.reg(funus);
-    	ItemRenderRegister.reg(imperium);
-    	ItemRenderRegister.reg(inanis);
-    	ItemRenderRegister.reg(infernum);
-    	ItemRenderRegister.reg(irrigus);
-    	ItemRenderRegister.reg(mundus);
-    	ItemRenderRegister.reg(natura);
-    	ItemRenderRegister.reg(pax);
-    	ItemRenderRegister.reg(sopio);
+    	regForRendering(animo);
+    	regForRendering(bellum);
+    	regForRendering(caelum);
+    	regForRendering(calor);
+    	regForRendering(cantio);
+    	regForRendering(creo);
+    	regForRendering(evorsio);
+    	regForRendering(funus);
+    	regForRendering(imperium);
+    	regForRendering(inanis);
+    	regForRendering(infernum);
+    	regForRendering(irrigus);
+    	regForRendering(mundus);
+    	regForRendering(natura);
+    	regForRendering(pax);
+    	regForRendering(sopio);
     	
 	}
 		

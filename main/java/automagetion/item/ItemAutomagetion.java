@@ -1,5 +1,8 @@
 package automagetion.item;
 
+import automagetion.Automagetion;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -22,6 +25,11 @@ public class ItemAutomagetion extends Item
 	
 	/** Set to true when name is set. Cannot change name after this is true*/
 	private boolean nameSet = false;
+	
+	public ItemAutomagetion()
+	{
+		super();
+	}
 	
 	/**
 	 * Called on mod initialization - initializes and registers ALL items
@@ -91,8 +99,12 @@ public class ItemAutomagetion extends Item
 		}
 	}
 	
-	public ItemAutomagetion()
+	public static void regForRendering(ItemAutomagetion item) 
 	{
-		super();
+	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Automagetion.MODID + ":" + item.getShortName(), "inventory"));
+	}
+	public static void regForRendering(Item item) 
+	{
+	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Automagetion.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
 	}
 }
