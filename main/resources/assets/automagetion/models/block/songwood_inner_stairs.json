@@ -1,0 +1,9 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": 
+    {
+        "bottom": "automagetion:blocks/songwood_planks",
+        "top": "automagetion:blocks/songwood_planks",
+        "side": "automagetion:blocks/songwood_planks"
+    }
+}

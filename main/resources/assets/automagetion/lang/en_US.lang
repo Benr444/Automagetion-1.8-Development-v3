@@ -27,5 +27,6 @@ item.tuning_fork.name=Tuning Fork
 item.whistling_reed.name=Whistling Reed
 
 //Blocks
-tile.songwood_planks.name=Songwood Planks
 tile.songwood_log.name=Songwood Log
+tile.songwood_planks.name=Songwood Planks
+tile.songwood_stairs.name=Songwood Stairs
