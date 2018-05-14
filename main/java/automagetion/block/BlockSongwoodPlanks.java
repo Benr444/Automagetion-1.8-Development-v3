@@ -21,6 +21,9 @@ public class BlockSongwoodPlanks extends BlockAutomagetion
 	{
 		super(Material.wood); //Set material to wood
 		this.setCreativeTab(ItemAutomagetion.tabAutomagetion);
+		this.setStepSound(soundTypeWood);
+		this.setHardness((float) 1.0);
+		this.setResistance((float) 1.0);
 	}
 	
 	public static void preInit()

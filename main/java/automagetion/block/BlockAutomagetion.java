@@ -1,13 +1,8 @@
 package automagetion.block;
 
 import automagetion.ShortName;
-import automagetion.item.ItemAutomagetion;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockAutomagetion extends Block implements ShortName
 {
@@ -20,12 +15,14 @@ public class BlockAutomagetion extends Block implements ShortName
 	/** All blocks need to initialize from here */
 	public static void preInit()
 	{
+		System.out.println("BLOCK PREINIT");
 		BlockSongwoodPlanks.preInit();
 		BlockSongwoodStairs.preInit();
 	}
 	
 	public static void init()
 	{
+		System.out.println("BLOCK INIT");
 		BlockSongwoodPlanks.init();
 		BlockSongwoodStairs.init();
 	}

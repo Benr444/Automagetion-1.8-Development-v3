@@ -14,6 +14,7 @@ public class CommonProxy
     public void preInit(FMLPreInitializationEvent e) 
     {
     	//Block and Item Reference Creation
+		System.out.println("PREINIT");
     	BlockAutomagetion.preInit();
     	ItemAutomagetion.preInit();
     	
@@ -24,8 +25,8 @@ public class CommonProxy
 
     public void init(FMLInitializationEvent e) 
     {
-    	ItemAutomagetion.init();
     	BlockAutomagetion.init();
+    	ItemAutomagetion.init();
     }
 
     public void postInit(FMLPostInitializationEvent e) 

@@ -31,6 +31,9 @@ public class BlockSongwoodStairs extends BlockStairs implements ShortName
 		super(modelState);
 		this.setCreativeTab(ItemAutomagetion.tabAutomagetion);
 		this.useNeighborBrightness = true; //Recommended online
+		this.setStepSound(soundTypeWood);
+		this.setHardness((float) 1.0);
+		this.setResistance((float) 1.0);
 	}
 	
 	public static void preInit()

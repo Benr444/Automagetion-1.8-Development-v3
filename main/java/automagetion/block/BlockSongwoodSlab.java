@@ -29,11 +29,17 @@ public class BlockSongwoodSlab extends BlockSlab implements ShortName
 	
 	/** Set to true when name is set. Cannot change name after this is true*/
 	private boolean nameSet = false;
+
+	private SoundType soundType;
 	
 	public BlockSongwoodSlab(Material materialIn)
 	{
 		super(materialIn);
 		this.setCreativeTab(ItemAutomagetion.tabAutomagetion);
+		this.setStepSound(soundTypeWood);
+		this.soundType = soundTypeWood;
+		this.setHardness((float) 1.0);
+		this.setResistance((float) 1.0);
 	}
 	
 	public static void preInit()
